@@ -4,9 +4,8 @@ import { FaFolder } from "react-icons/fa"
 
 export default function Menus() {
     return (
-        <SystemsPageTemplate
-            children={<MenusContainer />}
-            pageTitle="Menus"
-        />
+        <SystemsPageTemplate pageTitle="Menus">
+            <MenusContainer />
+        </SystemsPageTemplate>
     )
 }

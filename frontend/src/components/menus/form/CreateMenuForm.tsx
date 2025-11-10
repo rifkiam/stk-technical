@@ -25,8 +25,8 @@ export default function UpdateMenuForm({ parents }: { parents: TreeNode[] }) {
             <div className="flex flex-col space-y-1 mb-3">
                 <label className="text-sm font-medium text-gray-700">Part of</label>
                 <Select {...form.register('parent_id')}>
-                    {parents.map((item) => (
-                        <option value={item.id}>{item.name}</option>
+                    {parents.map((item, index) => (
+                        <option key={index} value={item.id}>{item.name}</option>
                     ))}
                 </Select>
             </div>
