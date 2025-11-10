@@ -1,0 +1,72 @@
+[
+  {
+    "id": "05057ff5-c8be-4b9c-bcde-36fbe8fbb53b",
+    "name": "System Management",
+    "parent_id": null,
+    "depth": 1,
+    "sequence": 1
+  },
+  {
+    "id": "61339619-3886-4ad5-b8d6-5ee15924d535",
+    "name": "Port Hardening",
+    "parent_id": "05057ff5-c8be-4b9c-bcde-36fbe8fbb53b",
+    "depth": 2,
+    "sequence": 1
+  },
+  {
+    "id": "8705f03c-46df-4a5f-9ccf-60b16c0e0570",
+    "name": "Routine Maintenance",
+    "parent_id": "05057ff5-c8be-4b9c-bcde-36fbe8fbb53b",
+    "depth": 2,
+    "sequence": 2
+  },
+  {
+    "id": "cf1bbc31-7a43-4098-bb20-49dece8061ad",
+    "name": "Make a coffee",
+    "parent_id": "8705f03c-46df-4a5f-9ccf-60b16c0e0570",
+    "depth": 3,
+    "sequence": 1
+  },
+  {
+    "id": "3a109472-70f9-40af-831e-91c18a19b98e",
+    "name": "Breakfast",
+    "parent_id": "cf1bbc31-7a43-4098-bb20-49dece8061ad",
+    "depth": 4,
+    "sequence": 1
+  },
+  {
+    "id": "7948a6dd-4e86-4333-a50a-1f4e85a0a6d8",
+    "name": "Do dishes",
+    "parent_id": "cf1bbc31-7a43-4098-bb20-49dece8061ad",
+    "depth": 4,
+    "sequence": 2
+  },
+  {
+    "id": "539f4dbe-b3ad-4f7d-b1a2-83bc319ed026",
+    "name": "Sleep 30min",
+    "parent_id": "7948a6dd-4e86-4333-a50a-1f4e85a0a6d8",
+    "depth": 5,
+    "sequence": 1
+  },
+  {
+    "id": "d17e2d49-7979-4cd3-93e8-b73a9ff92af8",
+    "name": "Check logs",
+    "parent_id": "539f4dbe-b3ad-4f7d-b1a2-83bc319ed026",
+    "depth": 6,
+    "sequence": 1
+  },
+  {
+    "id": "8c9074f0-162c-442a-82c0-cf36e893f919",
+    "name": "System audit",
+    "parent_id": null,
+    "depth": 1,
+    "sequence": 2
+  },
+  {
+    "id": "d76657c8-9a49-4f23-b8d6-5410d067bbd0",
+    "name": "Audit evaluation",
+    "parent_id": "8c9074f0-162c-442a-82c0-cf36e893f919",
+    "depth": 2,
+    "sequence": 1
+  }
+]
