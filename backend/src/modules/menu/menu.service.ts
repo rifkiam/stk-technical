@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { CreateMenuDto, MoveMenuDto, ReorderMenuDto, UpdateMenuDto } from './dto/menu.dto';
 import { PrismaService } from '@/providers/prisma';
 import { Menus } from '@prisma/client';
@@ -10,11 +10,15 @@ export class MenuService {
   ) {}
 
   async create(createMenuDto: CreateMenuDto) {
-    const parent = await this.prismaService.menus.findFirst({
-      where: { id: createMenuDto.parent_id }
-    });
+    if (createMenuDto.parent_id && createMenuDto.parent_id !== '') {
+      const parent = await this.prismaService.menus.findFirst({
+        where: { id: createMenuDto.parent_id }
+      });
+      
+      if (!parent) { // make children of parent if parent exists
+        throw new BadRequestException('Parent with corresponding ID not found!');
+      }
 
-    if (parent) { // make children of parent if parent exists
       return await this.prismaService.menus.create({
         data: {
           name: createMenuDto.name,
@@ -23,16 +27,15 @@ export class MenuService {
           sequence: 1
         },
       });
-    } else {
-      return await this.prismaService.menus.create({
-        data: {
-          name: createMenuDto.name,
-          parent_id: createMenuDto.parent_id,
-          depth: 1,
-          sequence: 1
-        },
-      });
     }
+
+    return await this.prismaService.menus.create({
+      data: {
+        name: createMenuDto.name,
+        depth: 1,
+        sequence: 1
+      },
+    });
   }
 
   async findAll() {

@@ -1,12 +1,12 @@
 "use client";
 
-import { CreateMenuFormSchema, createMenuFormSchema } from "@/app/schemas/form";
+import { CreateMenuFormSchema, createMenuFormSchema } from "@/schemas/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { IoMdClose } from "react-icons/io";
 import CreateMenuForm from "@/components/menus/form/CreateMenuForm";
 import { Button } from "@headlessui/react";
-import { TreeNode } from "@/app/schemas/object/tree";
+import { TreeNode } from "@/schemas/object/tree";
 import { createMenu } from "@/lib/api/menus";
 
 interface CreateMenuModalProps {

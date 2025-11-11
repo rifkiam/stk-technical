@@ -1,4 +1,4 @@
-import { UpdateMenuFormSchema } from "@/app/schemas/form";
+import { UpdateMenuFormSchema } from "@/schemas/form";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 

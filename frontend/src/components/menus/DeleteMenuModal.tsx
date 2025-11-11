@@ -1,6 +1,6 @@
 "use client";
 
-import { TreeNode } from "@/app/schemas/object/tree";
+import { TreeNode } from "@/schemas/object/tree";
 import { Button } from "@headlessui/react";
 import { IoMdClose } from "react-icons/io";
 
@@ -35,8 +35,8 @@ export default function DeleteMenuModal({ itemToDelete, onClose, onOk }: DeleteM
 
                 <h2 className="text-lg font-semibold mb-4">Delete Menu</h2>
 
-                <div className="flex flex-col pb-4">
-                    <p>Are you sure to delete this item?</p>
+                <div className="flex flex-col space-y-4 pb-4">
+                    <p>Are you sure to delete this item? Its children will get deleted too!</p>
                     <p>Item: ({itemToDelete.name})</p>
                 </div>
 

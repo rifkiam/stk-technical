@@ -1,6 +1,6 @@
 "use client";
 
-import { TreeNode } from "@/app/schemas/object/tree";
+import { TreeNode } from "@/schemas/object/tree";
 import {
   DndContext,
   closestCenter,
@@ -19,7 +19,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { Button } from "@headlessui/react";
 import { moveMenu, reorderMenu } from "@/lib/api/menus";
-import { MoveMenuSchema, ReorderMenuSchema } from "@/app/schemas/form";
+import { MoveMenuSchema, ReorderMenuSchema } from "@/schemas/form";
 
 
 function Row({ item, isDeep, clickEvent, deleteEvent }: { item: TreeNode, isDeep: boolean, clickEvent: (item: TreeNode) => void, deleteEvent: (id: string) => Promise<void> }) {
@@ -53,6 +53,7 @@ function Row({ item, isDeep, clickEvent, deleteEvent }: { item: TreeNode, isDeep
           e.stopPropagation();
           deleteEvent(item.id);
         }}
+        className={'hover:cursor-pointer'}
       >
         <FaRegTrashAlt className={`fill-red-600 ${!delIcon ? 'hidden' : ''}`} />
       </Button>

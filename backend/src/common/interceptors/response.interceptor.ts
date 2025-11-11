@@ -23,16 +23,20 @@ export class ResponseInterceptor<T> implements NestInterceptor<T, Response<T>> {
         next: CallHandler,
     ): Observable<Response<T>> {
         return next.handle().pipe(
-            map((data) => ({
-                success: true,
-                status: context.switchToHttp().getResponse().statusCode,
-                message:
-                    this.reflector.get<string>(
-                        'response_message',
-                        context.getHandler(),
-                    ) || '',
-                data,
-            })),
+            map((data) => {
+                return {
+                    success: true,
+                    status: context.switchToHttp().getResponse().statusCode,
+                    message:
+                        this.reflector.get<string>(
+                            'response_message',
+                            context.getHandler(),
+                        ) ??
+                        data?.message ??
+                        '',
+                    data: data?.data ?? data,
+                };
+            }),
         );
     }
 }

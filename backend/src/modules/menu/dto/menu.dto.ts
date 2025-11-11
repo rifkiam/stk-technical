@@ -16,7 +16,11 @@ export class MenuDto {
     sequence: number;
 }
 
-export class CreateMenuDto extends OmitType(MenuDto, ['depth', 'sequence'] as const) {}
+export class CreateMenuDto extends OmitType(MenuDto, ['depth', 'sequence', 'parent_id'] as const) {
+    @IsString()
+    @IsOptional()
+    parent_id?: string;
+}
 
 export class UpdateMenuDto extends PartialType(MenuDto) {}
 

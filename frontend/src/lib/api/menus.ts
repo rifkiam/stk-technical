@@ -1,6 +1,6 @@
-import { TreeNode } from "@/app/schemas/object/tree";
+import { TreeNode } from "@/schemas/object/tree";
 import { ApiResponse, ApiService } from "./api";
-import { MoveMenuSchema, ReorderMenuSchema, UpdateMenuFormSchema } from "@/app/schemas/form";
+import { MoveMenuSchema, ReorderMenuSchema, UpdateMenuFormSchema } from "@/schemas/form";
 import toast from "react-hot-toast";
 
 export async function getMenus() {
